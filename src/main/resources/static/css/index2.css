@@ -1,0 +1,86 @@
+.navbar-brand {
+       padding: 0px;
+   }
+.navbar-brand>img {
+    height: 100%;
+    padding: 15px;
+    width: auto;
+}
+.example2 .navbar-brand>img {
+    padding: 7px 15px;
+}
+.navbar-nav>li>a{
+    padding-bottom: 25px;
+    padding-top: 25px;
+    color: black;
+}
+
+.nav>li>a{
+    margin-left: 50px;
+}
+/*
+body {
+    background-image: url("../image/bac.png");
+}*/
+
+
+
+#mySidenav a {
+    position: absolute;
+    left: -35px;
+    transition: 0.2s;
+    padding: 15px;
+    width: 220px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+}
+
+#mySidenav a:hover {
+    left: 0;
+}
+
+#about {
+    top: 120px;
+    background-color: #f44336;
+}
+
+#blog {
+    top: 180px;
+    background-color: #555;
+}
+
+#projects {
+    top: 240px;
+    background-color: lightpink;
+}
+
+#contact {
+    top: 300px;
+    background-color: orange;
+}
+
+#a {
+    top: 360px;
+    background-color: #2196F3;
+}
+
+#b {
+     top: 420px;
+     background-color: purple;
+ }
+
+#c {
+    top: 480px;
+    background-color: #4CAF50;
+}
+.homeTitle {
+    margin-top: 3%;
+    font-size: 40px;
+    margin-left: 10%;
+    width: 100%;
+    height: 60px;
+    color: red;
+    font-family: "Palatino Linotype";
+}

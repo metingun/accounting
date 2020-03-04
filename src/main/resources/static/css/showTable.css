@@ -1,0 +1,91 @@
+.results tr[visible='false'],
+.no-result {
+  display: none;
+}
+
+.searchInput {
+  position: relative;
+}
+
+.results tr[visible='true'] {
+  display: table-row;
+}
+
+.counter {
+  padding: 8px;
+  color: #ccc;
+}
+
+.tableContainer,.basketContainer {
+  width: 82%;
+  margin-left: 20%;
+  margin-top: -10%;
+  margin-bottom: 12%;
+}
+.salesInputContainer {
+  width: 82%;
+  margin-left: 20%;
+  margin-top: -10%;
+  margin-bottom: 16%;
+}
+
+.tablesBody {
+  background-color: white;
+}
+
+.tablesHead, .tablesHead th {
+  color: white;
+  background-color: black;
+  z-index: 1;
+}
+
+.tablesHead th{
+  text-align: center;
+}
+
+.buttonsTable {
+  text-align: center;
+  width: 11%;
+}
+
+.finishShoppingButton{
+  width: 100%;
+  height: 50px;
+  font-size: large;
+}
+
+.deleteRowButton {
+  margin-left: 10%;
+}
+
+
+
+/* TABLE SCROLLABLE */
+
+.tableFixHead {
+  overflow-y: auto;
+  height: 500px;
+  width: 100%;
+  border-radius: 1em;
+}
+.tableFixHeadForBasket {
+  overflow-y: auto;
+  height: 180px;
+  border-radius: 1em;
+  width: 100%;
+}
+.tableFixHead thead th, .tableFixHeadForBasket thead th {
+  position: sticky;
+  top: 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.scrollTable {
+  width: 100%;
+  margin-top: 0;
+  box-shadow: rgba(29, 29, 29, 0.3) 0px 6px 17px;
+}

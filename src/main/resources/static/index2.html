@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="application/json; charset=UTF-8" http-equiv="content-type">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" id="bootstrap-css" rel="stylesheet">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,500" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <link href="css/index2.css" rel="stylesheet">
+    <link href="css/showTable.css" rel="stylesheet">
+    <script src="js/addCustomer.js"></script>
+    <script src="js/addProduct.js"></script>
+    <script src="js/addProductType.js"></script>
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+    <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.min.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/plug-ins/1.10.15/sorting/stringMonthYear.js"></script>
+    <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.0/moment.min.js'></script>
+    <script>
+        window.console = window.console || function(t) {};
+    </script>
+    <script>
+        if (document.location.search.match(/type=embed/gi)) {
+            window.parent.postMessage("resize", "*");
+        }
+    </script>
+    <title>Muhasebe</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img src="image/headIcon.png" style="width: 180px;" />
+        </div>
+        <div id="navbar1" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"
+                       style="font-size: medium">Müşteri Bilgileri<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a onclick="return showTable('http://localhost:8080/restful/customers/getAll','Customer','#accountsTableCustomer');" style="font-size: medium">Mevcut Hesaplar</a></li>
+                        <li class="divider"></li>
+                        <li><a onclick="return openAddCustomerPage();" style="font-size: medium">Hesap Ekle</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"
+                       style="font-size: medium">Tedarikçi Bilgileri<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a onclick="return showTable('http://localhost:8080/restful/suppliers/getAll','Supplier','#accountsTableSupplier');" style="font-size: medium">Mevcut Hesaplar</a></li>
+                        <li class="divider"></li>
+                        <li><a onclick="return openAddSupplierPage();" style="font-size: medium">Hesap Ekle</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="font-size: medium">Ürün İşlemleri<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a onclick="return openAddProductPage()" style="font-size: medium">Ürün Ekle</a></li>
+                        <li class="divider"></li>
+                        <li><a onclick="return openAddProductTypePage()" style="font-size: medium">Ürün Türü Ekle</a></li>
+                        <li><a href="#" style="font-size: medium">Ürün Özelliği Ekle</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="sidenav" id="mySidenav">
+    <a href="#" id="about"><h4 style="margin-left:15%">Satış</h4></a>
+    <a href="#" id="blog"><h4 style="margin-left:15%">Tedarik</h4></a>
+    <a href="#" id="projects"><h4 style="margin-left:15%">Alınan Ürün Bilgisi</h4></a>
+    <a href="#" id="contact"><h4 style="margin-left:15%">Hesap Durumları</h4></a>
+    <a href="#" id="a"><h4 style="margin-left:15%">Alacaklar</h4></a>
+    <a href="#" id="b"><h4 style="margin-left:15%">Borçlar</h4></a>
+    <a href="#" id="c"><h4 style="margin-left:15%">Diğer</h4></a>
+
+</div>
+
+<div class="container homePage" style="margin-left:5%;">
+
+</div>
+<script id="rendered-js">
+    $(document).ready(function () {
+        $("#sort").DataTable({
+            columnDefs: [
+                { type: 'name', targets: [3] }] });
+    });
+</script>
+
+</body>
+</html>

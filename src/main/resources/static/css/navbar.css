@@ -1,0 +1,49 @@
+.navbar-default {
+  background-color: whitesmoke;
+  height: 8%;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  background-color: #DB4425
+}
+
+.navbar-default .navbar-nav > li > a:focus {
+  color: whitesmoke
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #000000;
+  background-color: whitesmoke;
+}
+
+.dropdown-menu > li > a {
+  color: #000000;
+  font-weight: bolder;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  color: white;
+}
+
+.navbar-default .navbar-nav > .dropdown > a:hover .caret {
+  border-top-color: #DB4425
+}
+
+.navbar-default .navbar-nav > .dropdown > a:hover .caret {
+  border-bottom-color: #DB4425
+}
+
+.dropGroup {
+  margin-left: 22%;
+  width: 70%;
+  margin-top: -5%;
+}
+
+.dropdown-toggle {
+  font-size: 120%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navHead {
+  box-shadow: rgba(29, 29, 29, 0.05) 0px 6px 17px;
+}

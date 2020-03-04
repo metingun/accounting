@@ -1,0 +1,42 @@
+.addFormCustomer, .addFormSupplier, .addFormProductType, .addFormProduct {
+  margin-top: -10%;
+  margin-left: 20%;
+  width: 70%;
+  height: 80%;
+}
+
+.addCustomer, .addSupplier, .addProductType, .addProduct{
+  width: 100%;
+  margin-top: 0;
+  box-shadow: rgba(29, 29, 29, 0.3) 0px 6px 17px;
+}
+
+.addCustomer, .addSupplier{
+  height: 530px;
+}
+
+.addProductType{
+  height: 240px;
+}
+
+.addProduct{
+  height: 330px;
+}
+
+*[role="form"] {
+  max-width: 95%;
+  padding: 3%;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 0.6em;
+}
+
+*[role="form"] h2 {
+  margin-top: 0;
+  margin-bottom: 2%;
+  text-align: center;
+}
+
+body{
+  background-color: whitesmoke;
+}
